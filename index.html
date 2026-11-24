@@ -1,1 +1,202 @@
-
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="theme-color" content="#07090d"><title>Iris OS</title><style>:root{--bg:#07090d;--panel:#10141c;--panel2:#171d27;--text:#eef3f7;--muted:#8b96a6;--line:rgba(255,255,255,.09);--accent:#67e8f9;--accent2:#536dfe;--danger:#ff647c;--success:#6ee7b7;}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#020305;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}button,input,textarea,select{font:inherit;}button{border:0;cursor:pointer;}body{display:flex;justify-content:center;align-items:center;}#device{position:relative;width:min(100vw,440px);height:100dvh;min-height:560px;overflow:hidden;background:radial-gradient(circle at 20% 10%,rgba(83,109,254,.18),transparent 32%),radial-gradient(circle at 90% 90%,rgba(103,232,249,.08),transparent 30%),var(--bg);}#device.amber{--accent:#fbbf24;--accent2:#f97316;}#device.green{--accent:#6ee7b7;--accent2:#10b981;}#device.soft{--accent:#c4b5fd;--accent2:#a78bfa;}.screen{position:absolute;inset:0;}.hidden{display:none !important;}.lock-screen{z-index:5;display:flex;flex-direction:column;justify-content:space-between;padding:58px 24px 32px;background:linear-gradient(180deg,rgba(3,6,12,.35),rgba(3,6,12,.92)),radial-gradient(circle at 50% 25%,rgba(103,232,249,.16),transparent 25%),#080b12;}.lock-top{text-align:center;}.lock-time{font-size:72px;line-height:.9;font-weight:200;letter-spacing:-5px;}.lock-date{margin-top:14px;color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:2px;}.lock-bottom{text-align:center;}.lock-status{margin-bottom:24px;color:var(--muted);font-size:12px;letter-spacing:1px;}.unlock-btn{width:100%;padding:16px;border-radius:18px;color:#041016;background:var(--accent);font-weight:800;box-shadow:0 0 30px color-mix(in srgb,var(--accent) 35%,transparent);}#system{display:flex;flex-direction:column;animation:boot .35s ease;}@keyframes boot{from{opacity:0;transform:scale(1.015);}to{opacity:1;transform:scale(1);}}.status-bar{height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-size:12px;color:var(--text);z-index:2;}.status-right{display:flex;gap:10px;align-items:center;color:var(--muted);}.signal{color:var(--accent);}.system-content{flex:1;min-height:0;overflow:auto;scrollbar-width:none;}.system-content::-webkit-scrollbar{display:none;}.bottom-nav{height:66px;display:flex;align-items:center;justify-content:center;gap:32px;border-top:1px solid var(--line);background:rgba(7,9,13,.88);backdrop-filter:blur(18px);}.nav-btn{width:44px;height:44px;border-radius:15px;color:var(--muted);background:transparent;font-size:21px;}.nav-btn:active,.icon-btn:active,.app-icon:active,.card:active{transform:scale(.95);}.nav-btn.active{color:var(--accent);background:rgba(103,232,249,.1);}.home{padding:20px 20px 30px;}.home-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:25px;}.eyebrow{color:var(--accent);font-size:11px;letter-spacing:2px;text-transform:uppercase;}.home-title{margin:5px 0 0;font-size:28px;letter-spacing:-1px;}.home-date{color:var(--muted);font-size:12px;}.system-widget{position:relative;padding:18px;margin-bottom:25px;border:1px solid var(--line);border-radius:23px;overflow:hidden;background:linear-gradient(135deg,rgba(103,232,249,.14),rgba(83,109,254,.05)),var(--panel);}.system-widget::after{content:"";position:absolute;width:100px;height:100px;right:-25px;bottom:-40px;border:1px solid rgba(103,232,249,.3);border-radius:50%;box-shadow:0 0 0 12px rgba(103,232,249,.06),0 0 0 25px rgba(103,232,249,.04);}.widget-title{font-weight:750;margin-bottom:8px;}.widget-text{color:var(--muted);font-size:13px;line-height:1.5;max-width:260px;}.app-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 12px;}.app-icon{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text);background:transparent;transition:transform .15s ease;}.app-symbol{width:55px;height:55px;display:grid;place-items:center;border-radius:18px;color:#061016;background:linear-gradient(145deg,var(--app-color),color-mix(in srgb,var(--app-color) 45%,#192233));box-shadow:0 8px 22px rgba(0,0,0,.28);font-size:24px;}.app-label{max-width:75px;overflow:hidden;color:var(--muted);font-size:11px;text-overflow:ellipsis;white-space:nowrap;}.page{padding:18px 18px 28px;min-height:100%;}.page-header{display:flex;align-items:center;gap:13px;margin-bottom:20px;}.page-header h2{margin:0;font-size:23px;}.page-header p{margin:3px 0 0;color:var(--muted);font-size:12px;}.icon-btn{width:38px;height:38px;flex:0 0 auto;border:1px solid var(--line);border-radius:13px;color:var(--text);background:var(--panel);font-size:18px;transition:transform .15s ease;}.card{padding:15px;margin-bottom:11px;border:1px solid var(--line);border-radius:17px;background:rgba(16,20,28,.88);transition:transform .15s ease;}.row{display:flex;align-items:center;gap:12px;}.row-between{display:flex;align-items:center;justify-content:space-between;gap:12px;}.avatar{width:43px;height:43px;display:grid;place-items:center;flex:0 0 auto;border-radius:15px;color:#061016;background:linear-gradient(145deg,var(--accent),var(--accent2));font-weight:800;}.muted{color:var(--muted);}.small{font-size:12px;}input,textarea,select{width:100%;border:1px solid var(--line);border-radius:13px;outline:none;color:var(--text);background:#0b0f16;padding:13px 14px;}textarea{resize:vertical;min-height:110px;}input:focus,textarea:focus,select:focus{border-color:var(--accent);}.primary-btn,.secondary-btn,.danger-btn{padding:12px 15px;border-radius:13px;font-weight:700;}.primary-btn{color:#031015;background:var(--accent);}.secondary-btn{color:var(--text);background:var(--panel2);border:1px solid var(--line);}.danger-btn{color:#fff;background:rgba(255,100,124,.2);border:1px solid rgba(255,100,124,.4);}.full{width:100%;}.form-row{display:flex;gap:9px;margin-top:10px;}.form-row input{flex:1;}.chat-list{margin-bottom:10px;}.chat-item{cursor:pointer;}.chat-window{display:flex;flex-direction:column;min-height:calc(100dvh - 145px);}.chat-messages{flex:1;}.bubble{max-width:80%;padding:11px 13px;margin-bottom:9px;border-radius:15px;color:var(--text);background:var(--panel2);font-size:14px;line-height:1.4;}.bubble.mine{margin-left:auto;color:#041016;background:var(--accent);border-bottom-right-radius:4px;}.bubble:not(.mine){border-bottom-left-radius:4px;}.bubble-time{display:block;margin-top:5px;opacity:.6;font-size:10px;}.call-icon{width:37px;height:37px;border-radius:12px;color:var(--success);background:rgba(110,231,183,.12);}.note-card{cursor:pointer;}.note-title{margin-bottom:6px;font-weight:750;}.note-body{color:var(--muted);white-space:pre-wrap;font-size:13px;line-height:1.4;}.note-actions{display:flex;gap:8px;margin-top:13px;}.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}.photo{position:relative;min-height:150px;overflow:hidden;border-radius:17px;border:1px solid var(--line);background:radial-gradient(circle at 30% 20%,rgba(103,232,249,.8),transparent 20%),linear-gradient(145deg,#182a45,#10131d 60%,#3a1e47);}.photo:nth-child(2n){background:radial-gradient(circle at 70% 20%,rgba(251,191,36,.7),transparent 20%),linear-gradient(145deg,#30263e,#111827 65%,#102e3a);}.photo img{width:100%;height:100%;min-height:150px;object-fit:cover;}.photo-label{position:absolute;left:10px;bottom:9px;color:#fff;font-size:11px;text-shadow:0 1px 5px #000;}.camera-box{position:relative;min-height:390px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:24px;background:#020305;border:1px solid var(--line);}.camera-box video,.camera-box img{width:100%;height:100%;min-height:390px;object-fit:cover;}.camera-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:17px;pointer-events:none;}.camera-top{display:flex;justify-content:space-between;color:var(--accent);font-size:12px;}.camera-bottom{display:flex;justify-content:center;}.shutter{width:65px;height:65px;border:5px solid rgba(255,255,255,.85);border-radius:50%;background:rgba(255,255,255,.25);pointer-events:auto;}.setting-item{padding:16px 0;border-bottom:1px solid var(--line);}.setting-item:last-child{border-bottom:0;}.setting-description{margin-top:4px;color:var(--muted);font-size:12px;}.switch{position:relative;width:45px;height:26px;border-radius:20px;background:#303744;}.switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s;}.switch.on{background:var(--accent2);}.switch.on::after{left:22px;}.browser-bar{display:flex;gap:8px;margin-bottom:15px;}.browser-bar input{min-width:0;}.browser-result{padding:18px;min-height:220px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,rgba(103,232,249,.1),transparent),var(--panel);}.browser-result h3{margin:0 0 8px;}.file-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:12px;color:var(--accent);background:rgba(103,232,249,.1);font-size:20px;}.empty{padding:35px 10px;color:var(--muted);text-align:center;font-size:13px;}.toast{position:absolute;left:18px;right:18px;bottom:83px;z-index:20;padding:13px 15px;border:1px solid var(--accent);border-radius:15px;color:var(--text);background:rgba(16,20,28,.96);box-shadow:0 10px 30px rgba(0,0,0,.35);animation:toast-in .25s ease;}@keyframes toast-in{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}@media (min-width:500px){#device{height:min(900px,100dvh);border:1px solid rgba(255,255,255,.13);border-radius:32px;box-shadow:0 25px 100px #000;}}</style></head><body><div id="device"><section id="lock" class="screen lock-screen"><div class="lock-top"><div id="lockTime" class="lock-time">00:00</div><div id="lockDate" class="lock-date">IRIS NETWORK</div></div><div class="lock-bottom"><div class="lock-status">SISTEMA BLOQUEADO · CONEXÃO SEGURA</div><button class="unlock-btn" data-action="unlock">Desbloquear Iris OS</button></div></section><section id="system" class="screen hidden"><header class="status-bar"><span id="statusTime">00:00</span><div class="status-right"><span class="signal">●●●</span><span>⌁</span><span id="battery">100%</span></div></header><main id="content" class="system-content"></main><nav class="bottom-nav"><button class="nav-btn" data-action="back">‹</button><button class="nav-btn active" data-action="home">⌂</button><button class="nav-btn" data-action="lock">⌑</button></nav></section><div id="toast" class="toast hidden"></div></div><script>
+const device = document.getElementById("device");
+const content = document.getElementById("content");
+const lock = document.getElementById("lock");
+const system = document.getElementById("system");
+const toast = document.getElementById("toast");
+const apps = [
+  { id: "messages", label: "Mensagens", icon: "✦", color: "#67e8f9" },
+  { id: "phone", label: "Telefone", icon: "⌕", color: "#6ee7b7" },
+  { id: "gallery", label: "Galeria", icon: "▧", color: "#fbbf24" },
+  { id: "camera", label: "Câmera", icon: "◉", color: "#f472b6" },
+  { id: "settings", label: "Configurações", icon: "⚙", color: "#c4b5fd" },
+  { id: "browser", label: "Navegador", icon: "◎", color: "#60a5fa" },
+  { id: "notes", label: "Notas", icon: "▤", color: "#fb923c" },
+  { id: "files", label: "Arquivos", icon: "▱", color: "#a7f3d0" },
+  { id: "notifications", label: "Alertas", icon: "!", color: "#fb7185" }
+];
+const initialState = {
+  unlocked: false,
+  currentApp: "home",
+  currentChat: null,
+  theme: "cyan",
+  sounds: true,
+  notifications: true,
+  messages: {
+    "Maya": [
+      { from: "Maya", text: "Você está aí?", time: "22:14" },
+      { from: "Você", text: "Estou. O que aconteceu?", time: "22:15" }
+    ],
+    "Sistema Iris": [
+      { from: "Sistema Iris", text: "Sincronização concluída.", time: "21:02" }
+    ]
+  },
+  contacts: [
+    { name: "Maya", number: "+55 11 90000-1020" },
+    { name: "Daniel", number: "+55 11 90000-3040" },
+    { name: "Sistema Iris", number: "IRIS-NET" }
+  ],
+  calls: [
+    { name: "Maya", type: "Recebida", time: "Hoje, 22:14" }
+  ],
+  notes: [
+    {
+      id: 1,
+      title: "Primeiro acesso",
+      body: "A rede Iris parece estar observando tudo."
+    }
+  ],
+  notificationsList: [
+    {
+      title: "Sistema Iris",
+      body: "Bem-vindo ao ambiente simulado.",
+      time: "Agora"
+    },
+    {
+      title: "Maya",
+      body: "Nova mensagem recebida.",
+      time: "22:14"
+    }
+  ],
+  photos: [],
+  files: [
+    { name: "Diário_01.txt", type: "Documento", icon: "▤" },
+    { name: "Memórias", type: "Pasta", icon: "▱" },
+    { name: "registro_iris.log", type: "Arquivo de sistema", icon: "⌁" }
+  ],
+  browserQuery: "iris://home"
+};
+let state = loadState();
+let cameraStream = null;
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("iris-os-state"));
+    return saved ? { ...initialState, ...saved } : structuredClone(initialState);
+  } catch {
+    return structuredClone(initialState);
+  }
+}
+function saveState() {
+  localStorage.setItem("iris-os-state", JSON.stringify(state));
+}
+function esc(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+function now() {
+  return new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+}
+function today() {
+  return new Date().toLocaleDateString("pt-BR", {
+    weekday: "long",
+    day: "numeric",
+    month: "long"
+  });
+}
+function applyTheme() {
+  device.classList.remove("amber", "green", "soft");
+  if (state.theme !== "cyan") device.classList.add(state.theme);
+}
+function updateClock() {
+  const date = new Date();
+  const time = date.toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  document.getElementById("lockTime").textContent = time;
+  document.getElementById("lockDate").textContent =
+    date.toLocaleDateString("pt-BR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long"
+    });
+  document.getElementById("statusTime").textContent = time;
+}
+async function updateBattery() {
+  const batteryEl = document.getElementById("battery");
+  if (!navigator.getBattery) {
+    batteryEl.textContent = "100%";
+    return;
+  }
+  try {
+    const battery = await navigator.getBattery();
+    const update = () => {
+      batteryEl.textContent = Math.round(battery.level * 100) + "%";
+    };
+    update();
+    battery.addEventListener("levelchange", update);
+  } catch {
+    batteryEl.textContent = "100%";
+  }
+}
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.remove("hidden");
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => {
+    toast.classList.add("hidden");
+  }, 2300);
+}
+function appHeader(title, subtitle = "") {
+  return `
+    <div class="page-header"><button class="icon-btn" data-action="home">‹</button><div><h2>${esc(title)}</h2>
+        ${subtitle ? `<p>${esc(subtitle)}</p>` : ""}
+      </div></div>
+  `;
+}
+function render() {
+  applyTheme();
+  if (!state.unlocked) {
+    lock.classList.remove("hidden");
+    system.classList.add("hidden");
+    return;
+  }
+  lock.classList.add("hidden");
+  system.classList.remove("hidden");
+  if (state.currentApp === "home") {
+    content.innerHTML = renderHome();
+  } else {
+    content.innerHTML = renderApp(state.currentApp);
+  }
+}
+function renderHome() {
+  const unread = state.notificationsList.length;
+  return `
+    <div class="home"><div class="home-header"><div><div class="eyebrow">IRIS OS / ${navigator.onLine ? "ONLINE" : "OFFLINE"}</div><h1 class="home-title">Olá, operador.</h1></div><div class="home-date">${esc(today())}</div></div><div class="system-widget"><div class="widget-title">Núcleo Iris ativo</div><div class="widget-text">
+          Todos os módulos estão operacionais. Existem ${unread} notificações aguardando leitura.
+        </div></div><div class="app-grid">
+        ${apps.map(app => `
+          <button class="app-icon" data-action="open" data-app="${app.id}"><span class="app-symbol" style="--app-color:${app.color}">
+              ${app.icon}
+            </span><span class="app-label">${app.label}</span></button>
+        `).join("")}
+      </div></div>
+  `;
+}
+function renderApp(id) {
+  switch (id) {
+    case "messages": return renderMessages();
+    case "phone": return renderPhone();
+    case "gallery": return renderGallery();
+    case "camera": return renderCamera();
+    case "settings": return renderSettings();
+    case "browser": return renderBrowser();
+    case "notes": return renderNotes();
+    case "files": return renderFiles();
+    case "notifications": return renderNotifications();
+    default: return renderHome();
+  }
+}
+function renderMessages() {
+  if (state.currentChat) {
+    const chat = state.messages[state.currentChat] || [];
+    return `
+      <div class="page chat-window"><div class="page-header"><button class="icon-btn" data-action="back">‹</button><div class="avatar">${esc(state.currentChat[0])}</div><div><h2>${esc(state.currentChat)}</h2><p>canal simulado seguro</p></div></div><div class="chat-messages">
+          
